@@ -1,1 +1,4 @@
 pdfplumber
+langchain_groq
+langchain.schema 
+dotenv
