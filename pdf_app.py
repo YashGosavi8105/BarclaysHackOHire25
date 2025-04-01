@@ -4,6 +4,9 @@ import os
 from langchain_groq import ChatGroq
 from langchain.schema import HumanMessage
 
+from dotenv import load_dotenv
+load_dotenv()
+
 def extract_pdf_content(pdf_path):
     """Extract text content from a PDF file."""
     extracted_text = ""
@@ -50,7 +53,7 @@ st.title("📄 PDF to Markdown Converter")
 st.subheader("Powered by Groq API (LangChain Integration)")
 
 # API key handling
-api_key_input = "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"
+api_key_input = "Groq_API_KEY"
 # If you want to use a hardcoded key for testing, uncomment and replace below
 # api_key = "your_api_key_here"  # Replace with your actual API key
 # api_key_input = st.text_input("Enter Groq API Key", value=api_key, type="password")

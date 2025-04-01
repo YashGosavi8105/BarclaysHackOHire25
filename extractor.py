@@ -10,6 +10,9 @@ from groq import Groq
 import time
 from pathlib import Path
 
+from dotenv import load_dotenv
+load_dotenv()
+
 class TermSheetExtractor:
     def __init__(self, 
                  embedding_model_name="all-MiniLM-L6-v2", 
@@ -25,7 +28,7 @@ class TermSheetExtractor:
             llm_model: The model to use for extraction
         """
         self.embedding_model = SentenceTransformer(embedding_model_name)
-        self.llm_api_key = llm_api_key or os.environ.get("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")
+        self.llm_api_key = llm_api_key or os.environ.get("Groq_API_KEY")
         self.llm_model = llm_model
         self.llm_client = Groq(api_key=self.llm_api_key) if self.llm_api_key else None
         
